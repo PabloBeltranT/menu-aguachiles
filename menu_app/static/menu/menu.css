@@ -1,0 +1,117 @@
+body{
+    background-color: rgb(216, 216, 216) !important;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    background-color: #002b3c !important;
+}
+header{
+    display: grid !important;
+    justify-items: center;
+    width: 70%;
+    padding: 20px 17px 0px 17px;
+    text-justify: distribute;
+}
+.container-img{
+    display: grid !important;
+    align-items: center !important;
+    justify-items: center !important;
+}
+.container-img img{
+    display: grid !important;
+}
+.skills{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+
+
+
+
+section{
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    padding-bottom: 20px !important;
+}
+.card-projects:hover{
+    box-shadow: 0px 0px 8px -1px #000000;
+}
+.card-projects img{
+    width: 100% !important;
+}
+.prueba{
+    display: grid !important;
+    height: 100px !important;
+    background-color: #002b3c !important;
+    overflow: hidden !important;
+}
+.card-projects{
+    display: grid !important;
+    background-color: white !important;
+    width: 100% !important;
+}
+.card-info{
+    display: grid;
+    width: 100% !important;
+    background-color: #002b3c !important;
+    color: white !important;
+    border: none !important;
+    color: white !important;
+}
+.link{
+    display: grid !important;
+    align-items: flex-end !important;
+}
+
+@media (max-width: 2000px) {
+    header{
+        width: 70%;
+        padding: 20px 0px 0px 0px;
+    }
+    section{
+        width: 70%;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1600px) {
+    header{
+        padding: 20px 0px 0px 0px;
+    }
+    section{
+        width: 70%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    header{
+        padding: 20px 0px 0px 0px;
+    }
+    .container-img{
+        align-items: initial !important;
+    }
+    section{
+        width: 70%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 760px) {
+    header{
+        width: 90%;
+        padding: 20px 0px 0px 0px;
+    }
+    section{
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
