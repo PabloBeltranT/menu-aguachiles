@@ -43,10 +43,10 @@ section{
 .card-projects img{
     width: 100% !important;
 }
-.prueba{
-    display: grid !important;
-    height: 100px !important;
-    background-color: #002b3c !important;
+.prueba {
+    width: 100% !important;
+    height: 15vw !important;
+    object-fit: cover !important;
     overflow: hidden !important;
 }
 .card-projects{
@@ -62,9 +62,21 @@ section{
     border: none !important;
     color: white !important;
 }
-.link{
-    display: grid !important;
-    align-items: flex-end !important;
+.enchiloso{
+    background-color: rgb(153, 0, 0) !important;
+    color: white !important;
+}
+.medio{
+    background-color: rgb(253, 114, 0) !important;
+    color: white !important;
+}
+.natural{
+    background-color: rgb(40, 141, 0) !important;
+    color: white !important;
+}
+.negro{
+    background-color: rgb(0, 0, 0) !important;
+    color: white !important;
 }
 
 @media (max-width: 2000px) {
