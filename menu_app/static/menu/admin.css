@@ -1,0 +1,27 @@
+body{
+    background-color: #b43d3d !important;
+}
+
+
+@media (max-width: 2000px) { 
+    body{
+        background-color: #e09292 !important;
+    }
+}
+
+@media (max-width: 1600px) {
+    body{
+        background-color: #e09292 !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    body{
+        background-color: #e09292 !important;
+    }
+
+}
+
+@media (max-width: 760px) {
+
+}
