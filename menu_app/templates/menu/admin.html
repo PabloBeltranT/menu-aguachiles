@@ -12,6 +12,7 @@
 <body>
     
     <section class="grid_container">
+
         <div class="card-info card mb-3" >
             <div class="row g-0">
                 <div class="col-md-8">
@@ -23,9 +24,9 @@
             </div>
         </div>
 
-        <section>
+        <section class="grid-add">
             <form action="/agregar_producto/" method="post">{% csrf_token %}
-                <div class="product card" style="width: 18rem;">
+                <div class="card">
                     <div class="card-body add_product">
                         <div>Titulo</div>
                         <div class="input_product"> <input type="text" name="titulo"> </div>
@@ -42,7 +43,7 @@
         <section class="grid-products">
             {% for producto in productos %}
                 <form action="/eliminar_producto/{{ producto.id }}" method="get">
-                    <div class="product card" style="width: 18rem;">
+                    <div class="product card" style="width: 100%;">
                         <div class="card-body">
                             <h5 class="card-title">{{ producto.titulo }}</h5>
                             <p class="card-text">{{ producto.descripcion }}</p>
@@ -53,6 +54,7 @@
                 </form>
             {% endfor %}
         </section>
+
     </section>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

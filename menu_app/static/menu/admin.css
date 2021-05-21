@@ -1,5 +1,12 @@
+html{
+    display: grid;
+    justify-items: center;
+}
 body{
     background-color: #d8d8d8 !important;
+    display: grid;
+    width: 80%;
+    justify-items: center;
 }
 
 
@@ -10,71 +17,50 @@ body{
 
 
 .add_product{
-    display: grid !important;
-    gap: 2%;
-    padding-bottom: 10% !important;
     background-color: #002b3c !important;
-    color: white;
-}
-
-.grid-products{
-    display: grid;
-    width: 100%;
-    justify-items: center;
+    color: white !important;
 }
 
 
-.product{
-    width: 100% !important;
-
-}
 
 @media (max-width: 2000px) { 
     .add_product{
+        display: grid !important;
         grid-template-columns: repeat(7, 1fr) !important;
-        grid-template-rows: auto;
-        align-items: center !important;
-        justify-items: center !important;
-        padding-bottom: 1% !important;
-    }
-    .grid-products{
-        grid-template-columns: repeat(5, 1fr);
-        padding-top: 5px;
-        gap: 5px;
+        grid-template-rows: auto !important;
+        justify-items: center;
+        align-items: center;
     }
 }
 
 @media (max-width: 1600px) {
     .add_product{
+        display: grid !important;
         grid-template-columns: repeat(7, 1fr) !important;
-        grid-template-rows: auto;
-        align-items: center !important;
-        justify-items: center !important;
-        padding-bottom: 1% !important;
-    }
-    .grid-products{
-        grid-template-columns: repeat(5, 1fr);
-        padding-top: 5px;
-        gap: 5px;
+        grid-template-rows: auto !important;
+        justify-items: center;
+        align-items: center;
     }
 }
 
 @media (max-width: 1200px) {
     .add_product{
-        grid-template-columns: repeat(7, 1fr) !important;
-        grid-template-rows: 1fr;
-        align-items: center !important;
-        justify-items: center !important;
-        padding-bottom: 1% !important;
+        display: grid !important;
+        grid-template-columns: repeat(6, 1fr) !important;
+        grid-template-rows: 1fr !important;
+        justify-items: center;
+        align-items: center;
     }
-    .grid-products{
-        grid-template-columns: repeat(4, 1fr);
-        padding-top: 5px;
-        gap: 5px;
+    .add_product input{
+        display: grid !important;
+        width: 100% !important;
     }
 }
 
 @media (max-width: 760px) {
+    body{
+        width: 95%;
+    }
     .add_product{
         grid-template-columns: 1fr !important;
         grid-template-rows: auto;
