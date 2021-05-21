@@ -40,7 +40,7 @@
         </section>
 
         <section class="grid-products">
-            {% for producto in productos%}
+            {% for producto in productos %}
                 <form action="/eliminar_producto/{{ producto.id }}" method="get">
                     <div class="product card" style="width: 18rem;">
                         <div class="card-body">
