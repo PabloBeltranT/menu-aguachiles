@@ -3,6 +3,7 @@ from django.db.models.fields import PositiveBigIntegerField
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import Productos
+from .forms import Img
 import json
 
 def view_prueba(request):
@@ -35,43 +36,72 @@ def menu_prueba(request):
     productos = Productos.objects.all()
     return render(request, 'menu_prueba.html', {'productos':productos})
 
-def agregar_producto(request):
+def admin(request):
+    productos = Productos.objects.all()
+    return render(request, 'admin.html', {'productos':productos, 'form_img':Img})
 
-    guardado = None
+def agregar_producto(request):
+    
 
     try:
-        titulo = request.POST['titulo'],
-        descripcion = request.POST['descripcion'],
-        precio = request.POST['precio']
-
-        guardado =True
-
-        new_product = Productos(
-        titulo = titulo[0], 
-        descripcion = descripcion[0], 
-        precio = precio
-        )
-
-        if guardado == True:
-            new_product.save()
+        titulo = str(request.POST['titulo'])
     except:
-        clave = None, 
-        titulo = None, 
-        descripcion = None, 
-        precio = None, 
-        guardado = None
+        return redirect('admin')
+    try:
+        descripcion = str(request.POST['descripcion'])
+    except:
+        return redirect('admin')
+    try:
+        precio = int(request.POST['precio'])
+    except:
+        return redirect('admin')
+    try:
+        estado = bool(request.POST['estado'])
+    except:
+        estado = False
 
-    productos = Productos.objects.all()
 
-    return render(request, 'admin.html', {'productos':productos})
+    try:
+        producto_repetido = Productos.objects.get(titulo = titulo)
+    except:
+        producto_repetido = False
+
+    if producto_repetido == False:
+        new_product = Productos(
+        titulo = titulo,
+        descripcion = descripcion,
+        precio = precio,
+        estado = estado
+        )
+        new_product.save()
+
+    return redirect('admin')
 
 
 def eliminar_producto(request, id):
     try:
         producto_eliminar = Productos.objects.get(id=id)
         producto_eliminar.delete()
-        return redirect('agregar')
+        return redirect('admin')
     except:
-        return redirect('agregar')
+        return redirect('admin')
+
+def inactivar_producto(request, id):
+    try:
+        producto_inactivar = Productos.objects.get(id=id)
+        producto_inactivar.estado = False
+        producto_inactivar.save()
+        return redirect('admin')
+    except:
+        return redirect('admin')
+
+def activar_producto(request, id):
+    try:
+        producto_activar = Productos.objects.get(id=id)
+        producto_activar.estado = True
+        producto_activar.save()
+        return redirect('admin')
+    except:
+        return redirect('admin')
 
     
