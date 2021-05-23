@@ -25,7 +25,7 @@
         </div>
 
         <section class="grid-add">
-            <form action="/agregar_producto/" method="post">{% csrf_token %}
+            <form action="/agregar_producto/" method="post" enctype="multipart/form-data">{% csrf_token %}
                 <div class="card">
                     <div class="card-body add_product">
                         <h2>Agregar Producto</h2>
@@ -33,10 +33,10 @@
                         <div  class="input_product">Descripcion <input type="text" name="descripcion" id="" required></div>
                         <div class="input_product">Precio <input type="number" name="precio" id="" required></div>
                         <label class="form-label" for="customFile">Ingresa imagenes</label>
-                        <input type="file" class="form-control" id="customFile" />
+                        <input type="file" class="form-control" id="customFile" name="imagen" required/>
                         <label for="">Activo<input type="checkbox" name="estado" id=""></label>
                         <div><input type="submit" value="Agregar" class="input_product btn btn-primary"></div><br>
-                        <a href="/menu_prueba/">
+                        <a href="/">
                             <div><input type="button" value="Ver Menu" class="input_product btn btn-primary"></div>
                         </a>
                     </div>

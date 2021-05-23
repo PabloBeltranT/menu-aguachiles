@@ -29,12 +29,10 @@ def view_prueba(request):
 
 
 # Create your views here.
-def menu(request):
-    return render(request, 'menu.html', {})
 
-def menu_prueba(request):
+def menu(request):
     productos = Productos.objects.all()
-    return render(request, 'menu_prueba.html', {'productos':productos})
+    return render(request, 'menu.html', {'productos':productos})
 
 def admin(request):
     productos = Productos.objects.all()
@@ -59,6 +57,10 @@ def agregar_producto(request):
         estado = bool(request.POST['estado'])
     except:
         estado = False
+    try:
+        imagen = request.FILES['imagen']
+    except:
+        imagen = None
 
 
     try:
@@ -71,6 +73,7 @@ def agregar_producto(request):
         titulo = titulo,
         descripcion = descripcion,
         precio = precio,
+        imagen = imagen,
         estado = estado
         )
         new_product.save()
